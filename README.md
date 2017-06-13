@@ -1,8 +1,8 @@
 test
 
-## Schema
+### Schema
 
-### JSON schema:
+#### JSON schema:
 
 test
 
