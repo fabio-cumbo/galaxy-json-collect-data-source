@@ -31,7 +31,7 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
 #### Tool XML schema:
 
 ```
-...
+[...]
 
   <command>
     <![CDATA[
@@ -40,7 +40,7 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
     ]]>
   </command>
 
-...
+[...]
 
   <outputs>
     <collection name="list_output" type="list:list" label="${tool.name} Output Collection">
@@ -49,6 +49,6 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
     <data name="output1" format="auto" label="${tool.name} Output Data" />
   </outputs>
 
-...
+[...]
 ```
 
