@@ -1,0 +1,30 @@
+[
+    {
+        "url":"http://localhost/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/request.xml", 
+        "name":"GDCWebApp XML Request", 
+        "extension":"xml"
+    },
+    {
+        "url":"http://localhost/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/request.txt", 
+        "name":"GDCWebApp Human-Readable Request Summary", 
+        "extension":"txt"
+    },
+    {
+        "url":"http://localhost/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/dataset-1-gdc.tar.gz", 
+        "name":"Data Set 1 [GDC]", 
+        "organize":"true", 
+        "extension":"gz", 
+        "metadata":{
+            "db_key":"hg38"
+        }
+    },
+    {
+        "url":"http://localhost/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/dataset-1-bed.tar.gz", 
+        "name":"Data Set 1 [BED]", 
+        "organize":"true", 
+        "extension":"gz", 
+        "metadata":{
+            "db_key":"hg38"
+        }
+    }
+]

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tool name="JSON collect data source" id="json_collect_data_source" tool_type="data_source" hidden="True" display_interface="False" version="1.0.0" force_history_refresh="True">
+    <description> - parse and download data and metadata from a JSON response and organize archives in collections</description>
+    <version_command>python json_collect_data_source.py --version</version_command>
+    <command>
+        <![CDATA[
+            mkdir -p tmp && 
+            python json_collect_data_source.py "${__app__.config.output_size_limit}" --json_param_file "${output1}" --path "." --appdata "tmp"
+        ]]>
+    </command>
+    <inputs check_values="False" action="http://link/to/external/data/source/">
+        <param name="URL" type="hidden" value="" />
+        <param name="GALAXY_URL" type="baseurl" value="/async/json_collect_data_source" />
+    </inputs>
+    <outputs>
+        <collection name="list_output" type="list:list" label="${tool.name} Output Collection">
+            <discover_datasets pattern="(?P&lt;identifier_0&gt;[^_]+)_(?P&lt;identifier_1&gt;[^_]+)_(?P&lt;ext&gt;[^_]+)_(?P&lt;dbkey&gt;[^_]+)" ext="auto" visible="False" directory="tmp" />
+        </collection>
+        <data name="output1" format="auto" label="${tool.name} Output Data" />
+    </outputs>
+    <options sanitize="False" refresh="True"/>
+</tool>
