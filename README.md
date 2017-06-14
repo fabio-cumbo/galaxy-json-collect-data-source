@@ -64,6 +64,6 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
 [...]
 ```
 
-### Tool Dependencies schema [tool_dependencies.xml]
+#### Tool Dependencies schema [tool_dependencies.xml]
 
 Remember to include the ```tool_dependencies.xml``` file required to download and install the ```json-collect-data-source``` requirement automatically.
