@@ -5,21 +5,26 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
 #### JSON schema:
 
 ```
-[ {"url":"http://bioinf.iasi.cnr.it/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/request.xml",
+[ 
+  {
+     "url":"http://bioinf.iasi.cnr.it/gdcwebapp/example/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/request.xml",
      "name":"GDCWebApp XML Request",
      "extension":"xml"
   },
-  {"url":"http://bioinf.iasi.cnr.it/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/request.txt",
+  {
+     "url":"http://bioinf.iasi.cnr.it/gdcwebapp/example/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/request.txt",
      "name":"GDCWebApp Human-Readable Request Summary",
      "extension":"txt"
   },
-  {"url":"http://bioinf.iasi.cnr.it/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/dataset-1-gdc.tar.gz",
+  {
+     "url":"http://bioinf.iasi.cnr.it/gdcwebapp/example/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/dataset-1-gdc.tar.gz",
      "name":"Data Set 1 [GDC]",
      "extension":"gz",
      "metadata":{"db_key":"hg38"},
      "organize":"true"
   },
-  {"url":"http://bioinf.iasi.cnr.it/gdcwebapp/tmp/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/dataset-1-bed.tar.gz",
+  {
+     "url":"http://bioinf.iasi.cnr.it/gdcwebapp/example/20170613231507_2217801a-5785-4b43-afe6-398ad061c815/dataset-1-bed.tar.gz",
      "name":"Data Set 1 [BED]",
      "extension":"gz",
      "metadata":{"db_key":"hg38"},
@@ -36,7 +41,7 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
   <command>
     <![CDATA[
       mkdir -p tmp && 
-      python json_collect_data_source.py "${__app__.config.output_size_limit}" --json_param_file "${output1}" --path "." --appdata "tmp"
+      python json_collect_data_source.py '${__app__.config.output_size_limit}' --json_param_file '${output1}' --path '.' --appdata 'tmp'
     ]]>
   </command>
 
