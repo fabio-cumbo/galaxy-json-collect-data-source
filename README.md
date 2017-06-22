@@ -1,4 +1,4 @@
-This tool is able to receive multiple datasets (optionally with their metadata) in a single query. As an extension of the [galaxy-json-data-source](https://github.com/mdshw5/galaxy-json-data-source) tool, it allows to handle archives (gz, bz2, tar, and zip) organizing their content in a collection. This feature is optional and can be enabled by setting the ```organize``` parameter to ```true``` in the JSON schema as shown in the example below. If the ```organize``` parameter is setted to ```false```, the archive will be downloaded and added to the history as the other files specified in the JSON schema, but it will not be decompress. This feature works properly if the tool XML schema contains the ```outputs``` block exactly as reported below. The ```collection``` block can be removed but the tool will not be able to organize the content of any archives. Be sure to remove the ```organize``` parameter from any archive entry in the JSON schema or set them to ```false``` if you do not need any collection in output.
+This tool exploits the [json_collect_data_source 1.0.0](https://github.com/bioconda/bioconda-recipes/tree/master/recipes/json-collect-data-source) BioConda package to receive multiple datasets (optionally with their metadata) in a single query. As an extension of the [galaxy-json-data-source](https://github.com/mdshw5/galaxy-json-data-source) tool, it allows to handle archives (gz, bz2, tar, and zip) organizing their content in a collection. This feature is optional and can be enabled by setting the ```organize``` parameter to ```true``` in the JSON schema as shown in the example below. If the ```organize``` parameter is setted to ```false```, the archive will be downloaded and added to the history as the other files specified in the JSON schema, but it will not be decompress. This feature works properly if the tool XML schema contains the ```outputs``` block exactly as reported below. The ```collection``` block can be removed but the tool will not be able to organize the content of any archives. Be sure to remove the ```organize``` parameter from any archive entry in the JSON schema or set them to ```false``` if you do not need any collection in output.
 
 ## Schema
 
@@ -46,11 +46,10 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
 [...]
 
   <command>
-    <![CDATA[
-      mkdir -p tmp && 
-      python json_collect_data_source.py '${__app__.config.output_size_limit}' --json_param_file '${output1}' --path '.' --appdata 'tmp'
-    ]]>
-  </command>
+<![CDATA[
+    python '$__tool_directory__/jcds_wrapper.py' '${__app__.config.output_size_limit}' --json_param_file '${output1}' --path '.' --appdata 'tmp'
+]]>
+    </command>
 
 [...]
 
