@@ -40,7 +40,7 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
 
   <requirements>
     <requirement type="package" version="2.7.10">python</requirement>
-    <requirement type="package" version="1.0.0">json-collect-data-source</requirement>
+    <requirement type="package" version="1.0.0">json_collect_data_source</requirement>
   </requirements>
 
 [...]
@@ -63,7 +63,3 @@ This tool is able to receive multiple datasets (optionally with their metadata) 
 
 [...]
 ```
-
-#### Tool Dependencies schema [tool_dependencies.xml]
-
-Remember to include the ```tool_dependencies.xml``` file required to download and install the ```json-collect-data-source``` requirement automatically.
